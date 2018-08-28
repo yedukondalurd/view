@@ -15,7 +15,7 @@ import { createStructuredSelector } from "reselect";
 import { compose } from "redux";
 import Header from "components/Header";
 import NavDrawer from "components/NavDrawer";
-import Footer from "components/Footer";
+//import Footer from "components/Footer";
 import injectSaga from "utils/injectSaga";
 import injectReducer from "utils/injectReducer";
 import makeSelectMainPage from "./selectors";
@@ -57,6 +57,8 @@ export class MainPage extends React.PureComponent {
           open={open}
           handleDrawerClose={this.handleDrawerClose}
         />
+        {/*
+
         <main
           className={classNames(classes.content, classes[`content-${anchor}`], {
             [classes.contentShift]: open,
@@ -64,7 +66,8 @@ export class MainPage extends React.PureComponent {
           })}
         >
           {children}
-        </main>
+        </main>*/}
+        <main className={classes.content}>{children}</main>
       </div>
     );
   }

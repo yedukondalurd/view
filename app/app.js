@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import blue from "@material-ui/core/colors/blue";
+import orange from "@material-ui/core/colors/orange";
 
 //import FontFaceObserver from 'fontfaceobserver';
 import createHistory from "history/createBrowserHistory";
@@ -56,7 +57,9 @@ const MOUNT_NODE = document.getElementById("app");
 const theme = createMuiTheme({
   direction: "ltr",
   palette: {
-    primary: blue
+    primary: blue,
+    secondary: orange,
+    type: "light"
   },
   navDrawerWidth: 240
 });

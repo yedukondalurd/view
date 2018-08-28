@@ -8,18 +8,10 @@ export const appbarStyles = theme => ({
     width: "100%"
   },
   appBar: {
-    position: "absolute",
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
+    position: "absolute"
   },
   appBarShift: {
-    width: `calc(100% - ${theme.navDrawerWidth}px)`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
+    width: `calc(100% - ${theme.navDrawerWidth}px)`
   },
   "appBarShift-left": {
     marginLeft: theme.navDrawerWidth

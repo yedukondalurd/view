@@ -54,7 +54,7 @@ class NavDrawer extends React.PureComponent {
 
 NavDrawer.propTypes = {
   anchor: PropTypes.string.isRequired,
-  open: PropTypes.boolean.isRequired,
+  open: PropTypes.bool.isRequired,
   handleDrawerClose: PropTypes.func.isRequired,
   theme: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired

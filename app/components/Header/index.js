@@ -19,35 +19,33 @@ class Header extends React.Component {
   render() {
     const { classes, anchor, open, handleDrawerOpen } = this.props;
     return (
-      <div className={classes.appFrame}>
-        <AppBar
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: open,
-            [classes[`appBarShift-${anchor}`]]: open
-          })}
-        >
-          <Toolbar disableGutters={!open}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={handleDrawerOpen}
-              className={classNames(classes.menuButton, open && classes.hide)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" noWrap>
-              Persistent drawer
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar
+        className={classNames(classes.appBar, {
+          [classes.appBarShift]: open,
+          [classes[`appBarShift-${anchor}`]]: open
+        })}
+      >
+        <Toolbar disableGutters={!open}>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            onClick={handleDrawerOpen}
+            className={classNames(classes.menuButton, open && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="title" color="inherit" noWrap>
+            Persistent drawer
+          </Typography>
+        </Toolbar>
+      </AppBar>
     );
   }
 }
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
   anchor: PropTypes.string.isRequired,
-  open: PropTypes.boolean.isRequired,
+  open: PropTypes.bool.isRequired,
   handleDrawerOpen: PropTypes.func.isRequired
 };
 

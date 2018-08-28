@@ -1,20 +1,15 @@
 export const contentStyles = theme => ({
   content: {
+    width: "100%",
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  "content-left": {
-    marginLeft: -theme.navDrawerWidth
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
+    backgroundColor: "white",
+    overflow: "auto",
+    // padding: 24,
+    // height: 'calc(100% - 56px)',
+    marginTop: 56,
+    [theme.breakpoints.up("sm")]: {
+      // height: 'calc(100% - 64px)',
+      marginTop: 64
+    }
   }
 });
