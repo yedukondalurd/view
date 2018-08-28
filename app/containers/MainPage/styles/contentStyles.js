@@ -1,15 +1,22 @@
 export const contentStyles = theme => ({
-  content: {
-    width: "100%",
+  root: {
     flexGrow: 1,
-    backgroundColor: "white",
-    overflow: "auto",
-    // padding: 24,
-    // height: 'calc(100% - 56px)',
-    marginTop: 56,
-    [theme.breakpoints.up("sm")]: {
-      // height: 'calc(100% - 64px)',
-      marginTop: 64
-    }
+    height: 440,
+    zIndex: 1,
+    overflow: "hidden",
+    position: "relative",
+    display: "flex"
+  },
+  toolbar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: "0 8px",
+    ...theme.mixins.toolbar
+  },
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing.unit * 3
   }
 });

@@ -42,7 +42,7 @@ export class MainPage extends React.PureComponent {
     const { children, classes, theme } = this.props,
       { anchor, open } = this.state;
     return (
-      <div>
+      <div className={classes.root}>
         <Helmet>
           <title>MainPage</title>
           <meta name="description" content="Description of MainPage" />
@@ -57,17 +57,10 @@ export class MainPage extends React.PureComponent {
           open={open}
           handleDrawerClose={this.handleDrawerClose}
         />
-        {/*
-
-        <main
-          className={classNames(classes.content, classes[`content-${anchor}`], {
-            [classes.contentShift]: open,
-            [classes[`contentShift-${anchor}`]]: open
-          })}
-        >
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
           {children}
-        </main>*/}
-        <main className={classes.content}>{children}</main>
+        </main>
       </div>
     );
   }

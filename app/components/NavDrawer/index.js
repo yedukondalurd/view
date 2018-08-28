@@ -16,6 +16,12 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import MapIcon from "@material-ui/icons/Map";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import TableChartIcon from "@material-ui/icons/TableChart";
 
 import { FormattedMessage } from "react-intl";
 import messages from "./messages";
@@ -24,36 +30,48 @@ import { navDrawerStyles } from "./styles/navDrawerStyles";
 /* eslint-disable react/prefer-stateless-function */
 class NavDrawer extends React.PureComponent {
   render() {
-    const { classes, theme, anchor, open, handleDrawerClose } = this.props;
+    const { classes, theme, open, handleDrawerClose } = this.props;
     return (
-      <div>
-        <Drawer
-          variant="persistent"
-          anchor={anchor}
-          open={open}
-          classes={{
-            paper: classes.drawerPaper
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? (
-                <ChevronRightIcon />
-              ) : (
-                <ChevronLeftIcon />
-              )}
-            </IconButton>
-          </div>
-          <Divider />
-          Hello
-        </Drawer>
-      </div>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: classNames(
+            classes.drawerPaper,
+            !open && classes.drawerPaperClose
+          )
+        }}
+        open={open}
+      >
+        <div className={classes.toolbar}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
+          </IconButton>
+        </div>
+        <Divider />
+        <List component="nav">
+          <ListItem button>
+            <ListItemIcon>
+              <MapIcon />
+            </ListItemIcon>
+            <ListItemText primary="Map" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <TableChartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Table" />
+          </ListItem>
+        </List>
+      </Drawer>
     );
   }
 }
 
 NavDrawer.propTypes = {
-  anchor: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   handleDrawerClose: PropTypes.func.isRequired,
   theme: PropTypes.object.isRequired,

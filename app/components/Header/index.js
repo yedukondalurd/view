@@ -17,13 +17,11 @@ import { appbarStyles } from "./styles/appbarStyles";
 /* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
   render() {
-    const { classes, anchor, open, handleDrawerOpen } = this.props;
+    const { classes, open, handleDrawerOpen } = this.props;
     return (
       <AppBar
-        className={classNames(classes.appBar, {
-          [classes.appBarShift]: open,
-          [classes[`appBarShift-${anchor}`]]: open
-        })}
+        position="absolute"
+        className={classNames(classes.appBar, open && classes.appBarShift)}
       >
         <Toolbar disableGutters={!open}>
           <IconButton
@@ -35,7 +33,7 @@ class Header extends React.Component {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" noWrap>
-            Persistent drawer
+            Mini variant drawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -44,7 +42,6 @@ class Header extends React.Component {
 }
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  anchor: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   handleDrawerOpen: PropTypes.func.isRequired
 };

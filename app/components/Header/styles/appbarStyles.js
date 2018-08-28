@@ -1,24 +1,22 @@
 export const appbarStyles = theme => ({
-  appFrame: {
-    height: 430,
-    zIndex: 1,
-    overflow: "hidden",
-    position: "relative",
-    display: "flex",
-    width: "100%"
-  },
   appBar: {
-    position: "absolute"
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })
   },
   appBarShift: {
-    width: `calc(100% - ${theme.navDrawerWidth}px)`
-  },
-  "appBarShift-left": {
-    marginLeft: theme.navDrawerWidth
+    marginLeft: theme.navDrawerWidth,
+    width: `calc(100% - ${theme.navDrawerWidth}px)`,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
   },
   menuButton: {
     marginLeft: 12,
-    marginRight: 20
+    marginRight: 36
   },
   hide: {
     display: "none"
