@@ -13,6 +13,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import blue from "@material-ui/core/colors/blue";
+
 //import FontFaceObserver from 'fontfaceobserver';
 import createHistory from "history/createBrowserHistory";
 import "sanitize.css/sanitize.css";
@@ -50,12 +53,20 @@ const history = createHistory();
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById("app");
 
+const theme = createMuiTheme({
+  palette: {
+    primary: blue
+  }
+});
+
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <MuiThemeProvider theme={theme}>
+            <App />
+          </MuiThemeProvider>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
