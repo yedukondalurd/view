@@ -1,6 +1,7 @@
 import React from "react";
-import { FormattedMessage } from "react-intl";
+//import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -11,36 +12,32 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import { appbarStyles } from "./styles/appbarStyles";
 
-import A from "./A";
-import Img from "./Img";
-import NavBar from "./NavBar";
-import HeaderLink from "./HeaderLink";
-import Banner from "./banner.jpg";
-import messages from "./messages";
+//import messages from "./messages";
 
 /* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes, anchor, open, handleDrawerOpen } = this.props;
     return (
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
+      <div className={classes.appFrame}>
+        <AppBar
+          className={classNames(classes.appBar, {
+            [classes.appBarShift]: open,
+            [classes[`appBarShift-${anchor}`]]: open
+          })}
+        >
+          <Toolbar disableGutters={!open}>
             <IconButton
-              className={classes.menuButton}
               color="inherit"
-              aria-label="Menu"
+              aria-label="Open drawer"
+              onClick={handleDrawerOpen}
+              className={classNames(classes.menuButton, open && classes.hide)}
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.flex}
-            >
-              News
+            <Typography variant="title" color="inherit" noWrap>
+              Persistent drawer
             </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
       </div>
@@ -48,7 +45,10 @@ class Header extends React.Component {
   }
 }
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  anchor: PropTypes.string.isRequired,
+  open: PropTypes.boolean.isRequired,
+  handleDrawerOpen: PropTypes.func.isRequired
 };
 
 export default withStyles(appbarStyles)(Header);

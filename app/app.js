@@ -54,9 +54,11 @@ const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById("app");
 
 const theme = createMuiTheme({
+  direction: "ltr",
   palette: {
     primary: blue
-  }
+  },
+  navDrawerWidth: 240
 });
 
 const render = messages => {

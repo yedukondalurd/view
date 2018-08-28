@@ -11,10 +11,9 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
 
+import MainPage from "containers/MainPage/Loadable";
 import HomePage from "containers/HomePage/Loadable";
 import NotFoundPage from "containers/NotFoundPage/Loadable";
-import Header from "components/Header";
-import Footer from "components/Footer";
 
 const AppWrapper = styled.div`
   margin: 0 auto;
@@ -30,12 +29,12 @@ export default function App() {
       <Helmet titleTemplate="%s - View" defaultTitle="View">
         <meta name="description" content="View application" />
       </Helmet>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
-      <Footer />
+      <MainPage>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+      </MainPage>
     </AppWrapper>
   );
 }
