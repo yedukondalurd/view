@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
+  "name": "view",
   "version": "3.6.0",
   "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/yedukondalurd/view.git"
   },
   "engines": {
     "npm": ">=5",
     "node": ">=8"
   },
-  "author": "Max Stoiber",
+  "author": "Yedu",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -144,6 +144,8 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.0",
+    "@material-ui/icons": "^3.0.0",
     "babel-polyfill": "6.26.0",
     "chalk": "^2.4.1",
     "compression": "1.7.2",
