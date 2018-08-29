@@ -22,6 +22,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import TableChartIcon from "@material-ui/icons/TableChart";
+import { Link } from "react-router-dom";
 
 import { FormattedMessage } from "react-intl";
 import messages from "./messages";
@@ -54,13 +55,13 @@ class NavDrawer extends React.PureComponent {
         </div>
         <Divider />
         <List component="nav">
-          <ListItem button>
+          <ListItem button component={Link} to="/">
             <ListItemIcon>
               <MapIcon />
             </ListItemIcon>
             <ListItemText primary="Map" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/list">
             <ListItemIcon>
               <TableChartIcon />
             </ListItemIcon>

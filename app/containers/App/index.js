@@ -13,6 +13,7 @@ import { Switch, Route } from "react-router-dom";
 
 import MainPage from "containers/MainPage/Loadable";
 import MapPage from "containers/MapPage/Loadable";
+import ListPage from "containers/ListPage/Loadable";
 import NotFoundPage from "containers/NotFoundPage/Loadable";
 
 const AppWrapper = styled.div`
@@ -32,6 +33,7 @@ export default function App() {
       <MainPage>
         <Switch>
           <Route exact path="/" component={MapPage} />
+          <Route exact path="/list" component={ListPage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
       </MainPage>

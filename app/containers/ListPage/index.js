@@ -28,7 +28,7 @@ export class ListPage extends React.PureComponent {
           <title>ListPage</title>
           <meta name="description" content="Description of ListPage" />
         </Helmet>
-        <FormattedMessage {...messages.header} />
+        Sample list view
       </div>
     );
   }
