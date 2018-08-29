@@ -33,7 +33,7 @@ class Header extends React.Component {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" noWrap>
-            Mini variant drawer
+            Meter View
           </Typography>
         </Toolbar>
       </AppBar>

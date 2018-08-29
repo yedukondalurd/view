@@ -1,11 +1,11 @@
 export const contentStyles = theme => ({
   root: {
     flexGrow: 1,
-    height: 440,
     zIndex: 1,
     overflow: "hidden",
     position: "relative",
-    display: "flex"
+    display: "flex",
+    padding: 0
   },
   toolbar: {
     display: "flex",
@@ -17,6 +17,6 @@ export const contentStyles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing.unit
   }
 });

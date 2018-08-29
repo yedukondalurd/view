@@ -26,6 +26,7 @@ import TableChartIcon from "@material-ui/icons/TableChart";
 import { FormattedMessage } from "react-intl";
 import messages from "./messages";
 import { navDrawerStyles } from "./styles/navDrawerStyles";
+import NavIndicator from "./NavIndicator";
 
 /* eslint-disable react/prefer-stateless-function */
 class NavDrawer extends React.PureComponent {
@@ -66,6 +67,7 @@ class NavDrawer extends React.PureComponent {
             <ListItemText primary="Table" />
           </ListItem>
         </List>
+        <NavIndicator />
       </Drawer>
     );
   }

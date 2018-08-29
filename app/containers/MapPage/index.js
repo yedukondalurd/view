@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 import { FormattedMessage } from "react-intl";
 import { createStructuredSelector } from "reselect";
 import { compose } from "redux";
-
+import { Map, Scene, loadModules } from "react-arcgis";
 import injectSaga from "utils/injectSaga";
 import injectReducer from "utils/injectReducer";
 import makeSelectMapPage from "./selectors";
@@ -28,7 +28,14 @@ export class MapPage extends React.PureComponent {
           <title>MapPage</title>
           <meta name="description" content="Description of MapPage" />
         </Helmet>
-        <FormattedMessage {...messages.header} />
+        <Map
+          style={{ width: "100%", height: "calc(100vh - 80px)" }}
+          mapProperties={{ basemap: "topo" }}
+          viewProperties={{
+            center: [55.422197, 25.3481969],
+            zoom: 11
+          }}
+        />
       </div>
     );
   }
