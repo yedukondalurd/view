@@ -14,6 +14,7 @@ import { Switch, Route } from "react-router-dom";
 import MainPage from "containers/MainPage/Loadable";
 import MapPage from "containers/MapPage/Loadable";
 import ListPage from "containers/ListPage/Loadable";
+import Plotter from "containers/Plotter/Loadable";
 import NotFoundPage from "containers/NotFoundPage/Loadable";
 
 const AppWrapper = styled.div`
@@ -30,13 +31,14 @@ export default function App() {
       <Helmet titleTemplate="%s - View" defaultTitle="View">
         <meta name="description" content="View application" />
       </Helmet>
-      <MainPage>
+      {/*<MainPage>
         <Switch>
           <Route exact path="/" component={MapPage} />
           <Route exact path="/list" component={ListPage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
-      </MainPage>
+      </MainPage>*/}
+      <Route exact path="/" component={Plotter} />
     </AppWrapper>
   );
 }
