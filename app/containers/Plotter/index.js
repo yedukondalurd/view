@@ -24,7 +24,6 @@ import AddIcon from "@material-ui/icons/Add";
 import TopNav from "./TopNav";
 import ActionToolbar from "components/ActionToolbar";
 import Container from "components/ActionToolbar/Container";
-import Grid from "@material-ui/core/Grid";
 
 import PChart from "./PChart";
 import PGrid from "./PGrid";
@@ -59,30 +58,14 @@ export class Plotter extends React.PureComponent {
           <title>Plotter</title>
           <meta name="description" content="Description of Plotter" />
         </Helmet>
-        <Grid container direction="row" spacing={16}>
-          <Grid item xs={1}>
-            <ActionToolbar placement="left" />
-          </Grid>
-          <Grid item xs={10}>
-            item 2
-          </Grid>
-          <Grid item xs={1}>
-            item 3
-          </Grid>
-        </Grid>
-
         {/*<PChart />
-        <PGrid />
+        <PGrid />*/}
         <ActionToolbar placement="top" />
         <ActionToolbar placement="left" />
-        <Container>
-          <Grid container spacing={10}>
-            grid container
-          </Grid>
-        </Container>
+        <Container> This is container box</Container>
         <ActionToolbar placement="right" />
         <ActionToolbar placement="bottom" />
-        <Drawer variant="permanent" anchor={"right"} open={true}>
+        {/*<Drawer variant="permanent" anchor={"right"} open={true}>
           <Button variant="fab" mini color="secondary" aria-label="Add">
             <AddIcon />
           </Button>
