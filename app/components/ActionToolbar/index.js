@@ -24,24 +24,10 @@ class ActionToolbar extends React.PureComponent {
     const { children, classes, placement, style } = this.props;
     return (
       <div>
-        {placement === "top" && <TopToolbar>This is toolbar</TopToolbar>}
-        {placement === "left" && (
-          <LeftToolbar style={style}>
-            <button>Top</button>
-            <div style={{ flex: 1 }} />
-            <button>Bot</button>
-          </LeftToolbar>
-        )}
-        {placement === "right" && (
-          <RightToolbar style={style}>
-            <button>Top</button>
-            <div style={{ flex: 1 }} />
-            <button>Bot</button>
-          </RightToolbar>
-        )}
-        {placement === "bottom" && (
-          <BottomToolbar>This is toolbar</BottomToolbar>
-        )}
+        {placement === "top" && <TopToolbar>{children}</TopToolbar>}
+        {placement === "left" && <LeftToolbar>{children}</LeftToolbar>}
+        {placement === "right" && <RightToolbar>{children}</RightToolbar>}
+        {placement === "bottom" && <BottomToolbar>{children}</BottomToolbar>}
       </div>
     );
   }

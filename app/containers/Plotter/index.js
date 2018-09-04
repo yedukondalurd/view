@@ -19,7 +19,9 @@ import Typography from "@material-ui/core/Typography";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
-import AddIcon from "@material-ui/icons/Add";
+import ShowChartIcon from "@material-ui/icons/ShowChart";
+
+import IconButton from "@material-ui/core/IconButton";
 
 import TopNav from "./TopNav";
 import ActionToolbar from "components/ActionToolbar";
@@ -27,6 +29,8 @@ import Container from "components/ActionToolbar/Container";
 
 import PChart from "./PChart";
 import PGrid from "./PGrid";
+
+import CloudIcon from "components/icons/Cloud";
 
 import injectSaga from "utils/injectSaga";
 import injectReducer from "utils/injectReducer";
@@ -60,9 +64,28 @@ export class Plotter extends React.PureComponent {
         </Helmet>
         {/*<PChart />
         <PGrid />*/}
-        <ActionToolbar placement="top" />
-        <ActionToolbar placement="left" />
-        <Container> This is container box</Container>
+        <ActionToolbar placement="top">
+          <h5
+            style={{
+              margin: 0,
+              fontWeight: 500,
+              opacity: 0.7
+            }}
+          >
+            PLOTTER
+          </h5>
+          <IconButton color="primary" component="span">
+            <ShowChartIcon />
+          </IconButton>
+        </ActionToolbar>
+        <ActionToolbar placement="left">
+          <IconButton color="primary" component="span">
+            <CloudIcon />
+          </IconButton>
+        </ActionToolbar>
+        <Container>
+          <PChart />
+        </Container>
         <ActionToolbar placement="right" />
         <ActionToolbar placement="bottom" />
         {/*<Drawer variant="permanent" anchor={"right"} open={true}>
